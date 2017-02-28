@@ -18,7 +18,7 @@ MultipleModelChoiceField wrapper. Groups choices by specific model field.
             widget=forms.CheckboxSelectMultiple,
         )
             
-    #   Animimal
+    #   Animal
     #       Cats
     #       Dogs
     #
