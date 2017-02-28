@@ -35,7 +35,6 @@ MultipleModelChoiceField wrapper. Groups choices by specific model field.
 
 ```
 {{ form.topics }}
-
 ```
 
 ### Parameters
