@@ -23,8 +23,8 @@ MultipleModelChoiceField wrapper. Groups choices by specific model field.
     #       Dogs
     #
     #   News
-    #       Busines
-    #       Sciece
+    #       Business
+    #       Science
     #       People
 
 - **group_by** - groups choices by specific model field. Supports related fields. Required parameter.
