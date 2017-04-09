@@ -1,31 +1,32 @@
 # grouped-multiple-model-choice-field
 
-### Requirements
+Grouping of model choices by field name.
 
-- Django
+Tested on Django 1.11 and Python 3.5
 
-### Description
+### Demo
 
-MultipleModelChoiceField wrapper. Groups choices by specific model field.
+![Demo 1](examples/Demo1.png?raw=true "Demo 1")
+![Demo 2](examples/Demo2.png?raw=true "Demo 2")
 
-### Using
+### Using 
 
-    class TopicForm(forms.ModelForm):
-        your_field = GroupedMultipleModelChoiceField(
-            group_by='theme__title',
-            sort_choices_by='title',
-            queryset=Topic.objects.all(),
-            widget=forms.CheckboxSelectMultiple,
-        )
-            
-    #   Animimal
-    #       Cats
-    #       Dogs
-    #
-    #   News
-    #       Busines
-    #       Sciece
-    #       People
+##### forms.py
+```python
+class ArticleForm(forms.Form):
+    articles = GroupedMultipleModelChoiceField(
+        group_by='category__name',
+        sort_choices_by='-title',
+        queryset=Article.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+    )
+```
 
-- **group_by** - groups choices by specific model field. Supports related fields. Required parameter.
-- **sort_choices_by** - sorts choices by specific model field. Optional parameter.
+##### template.html
+```
+{{ form.articles }}
+```
+
+##### Arguments:
+- **group_by** - groups choices by specific model field. Supports related fields. Required.
+- **sort_choices_by** - sorts choices by specific model field. Support a reversed sort with adding to string start '-'. Optional.
