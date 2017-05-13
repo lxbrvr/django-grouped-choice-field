@@ -1,4 +1,4 @@
-# grouped-multiple-model-choice-field
+# django-grouped-choice-field
 
 Grouping of model choices by field name.
 
