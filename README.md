@@ -14,7 +14,7 @@ Tested on Django 1.11 and Python 3.5
 ##### forms.py
 ```python
 class ArticleForm(forms.Form):
-    articles = GroupedMultipleModelChoiceField(
+    articles = GroupedModelMultipleChoiceField(
         group_by='category__name',
         sort_choices_by='-title',
         queryset=Article.objects.all(),

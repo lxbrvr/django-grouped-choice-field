@@ -5,7 +5,7 @@ from itertools import groupby
 from django import forms
 
 
-class GroupedMultipleModelChoiceField(forms.ModelMultipleChoiceField):
+class GroupedModelMultipleChoiceField(forms.ModelMultipleChoiceField):
     def __init__(self, group_by, sort_choices_by=None, *args, **kwargs):
         super(GroupedMultipleModelChoiceField, self).__init__(*args, **kwargs)
         self.group_by = group_by
