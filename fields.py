@@ -7,7 +7,7 @@ from django import forms
 
 class GroupedModelMultipleChoiceField(forms.ModelMultipleChoiceField):
     def __init__(self, group_by, sort_choices_by=None, *args, **kwargs):
-        super(GroupedMultipleModelChoiceField, self).__init__(*args, **kwargs)
+        super(GroupedModelMultipleChoiceField, self).__init__(*args, **kwargs)
         self.group_by = group_by
         self.sort_choices_by = sort_choices_by
         self.group_label = lambda group: group
